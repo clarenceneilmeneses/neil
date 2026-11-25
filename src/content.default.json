@@ -1,0 +1,131 @@
+{
+  "profile": {
+    "name": "Neil Alexi Vergara Terrible",
+    "title": "Full-Stack Developer",
+    "tagline": "I build web apps end to end — from the database to the last pixel.",
+    "email": "neilalexivergara@gmail.com",
+    "phone": "+63 999-971-1624",
+    "location": "Cale, Tanauan City, Batangas",
+    "linkedin": "https://www.linkedin.com/in/neil-alexi-terrible-62a97037a/",
+    "github": "",
+    "photo": "",
+    "resumeUrl": "https://arbqospfobibiiyivfhp.supabase.co/storage/v1/object/public/site/files/NeilAlexiTerrible_Resume.pdf",
+    "availability": "Open to Front-end and Back-end Developer roles"
+  },
+  "summary": "Junior full-stack developer who builds web apps end to end with React, TypeScript, Node.js, and SQL and NoSQL databases. Shipped a live booking platform with online payments for a 10-villa business, plus a face-recognition attendance system. Looking for a Front and Back-end Developer role.",
+  "skills": [
+    { "label": "Languages", "items": "JavaScript (ES6+), TypeScript, Python, Java, C++, SQL, HTML5, CSS3" },
+    { "label": "Frontend", "items": "React, Vite, Bootstrap, Figma, face-api.js" },
+    { "label": "Backend & APIs", "items": "Node.js, Express.js, REST APIs, Xendit API, Google Gemini API" },
+    { "label": "Databases", "items": "PostgreSQL (Supabase), MongoDB, Firebase (Cloud Firestore, Authentication)" },
+    { "label": "Testing & Support", "items": "Manual Testing, Black-Box Testing, Role-Based Access Testing, Issue Tracking, Technical Troubleshooting, Hardware Diagnostics, Network Troubleshooting, Remote Support, Data Backup and Restoration" },
+    { "label": "Tools & Deployment", "items": "Git/GitHub, Vercel, Firebase Hosting, Cloudinary, VS Code, Canva, Microsoft 365, Excel" },
+    { "label": "Soft Skills", "items": "Attention to Detail, Problem-Solving, Adaptability, Communication, Time Management, Reliability, Continuous Learning" }
+  ],
+  "experience": [
+    {
+      "role": "Full-Stack Developer (Freelance)",
+      "org": "Malaya Villas",
+      "orgDetail": "Private villa rental business (10 villas)",
+      "location": "malayavillas.com",
+      "link": "https://malayavillas.com",
+      "start": "September 2026",
+      "end": "Present",
+      "bullets": [
+        "Built the booking site and staff back office (React, TypeScript, Supabase) that replaced the owner's spreadsheets for all 10 villas.",
+        "Built online payments with Xendit checkout and synced 9 villa calendars with Airbnb, so no double bookings happen.",
+        "Shipped updates through owner-reviewed pull requests, with test checklists and a training video for the 18 staff users."
+      ]
+    },
+    {
+      "role": "IT Support and System Developer (On-Site)",
+      "org": "Lead Tech Industrial Solutions Corporation",
+      "orgDetail": "",
+      "location": "Dimayuga, San Roque, Santo Tomas, Batangas",
+      "link": "",
+      "start": "February 2026",
+      "end": "May 2026",
+      "bullets": [
+        "Designed and enhanced system UI/UX across 5+ pages in HTML, CSS, and JavaScript, documenting each iteration for traceability.",
+        "Maintained and tracked system configuration changes across 10+ deployment cycles, preventing configuration drift throughout the 14-week development lifecycle.",
+        "Tracked and resolved 20+ system issues by documenting root causes and confirming fixes held across all phases.",
+        "Set up and maintained database systems across multiple platforms, keeping records accurate, consistent, and easy to retrieve.",
+        "Built Excel trackers for system issues, data population, and inventory, keeping the team aligned on what was pending and completed."
+      ]
+    },
+    {
+      "role": "Moonton Student Leader",
+      "org": "Moonton Technologies Philippines, Inc.",
+      "orgDetail": "",
+      "location": "BSU JPLPC-Malvar Campus",
+      "link": "",
+      "start": "August 2024",
+      "end": "August 2026",
+      "bullets": [
+        "Served as the official Moonton Student Leader representative for the campus community.",
+        "Coordinated with other schools and institutions on inter-school tournament participation and partnerships.",
+        "Recruited and managed student participants, handling registration, onboarding, scheduling, venue arrangements, and rule enforcement during tournaments.",
+        "Promoted esports culture and sportsmanship on campus through organized competitive events."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "IntelliHire",
+      "subtitle": "AI-Enhanced Personal Data Sheet Parsing System for PESO (Public Employment Service Office)",
+      "context": "Undergraduate capstone · Batangas State University · 2025",
+      "stack": "MongoDB, Express.js, React, Node.js, Google Gemini 2.0 Flash, Vercel",
+      "link": "",
+      "repo": "",
+      "image": "",
+      "bullets": [
+        "Built a MERN stack job portal enabling direct and efficient hiring for PESO Santo Tomas, Batangas, managing job posts, applicant profiles, and recruiter screening data through a shared set of modules.",
+        "Developed the frontend in React to deliver quick page loads and clear navigation for both job seekers and recruiters.",
+        "Designed the data flow between the parsing engine and the application database to reduce manual screening work for recruiters."
+      ],
+      "details": "Applicants upload their Personal Data Sheet, and the system extracts education, experience, eligibility, and skills automatically. Candidates are ranked with a hybrid score — a configurable eight-criteria PDS score, a rule-based algorithmic score, and an AI evaluation from Gemini 2.0 Flash that returns reasons, strengths, and concerns. Administrators get percentile rankings, status tracking, CSV export, and analytics, and the system can turn a PDS into an ATS-ready resume.",
+      "metrics": [
+        { "value": "18/18", "label": "test cases passed" },
+        { "value": "4.96", "label": "security rating (ISO/IEC 25010)" },
+        { "value": "4.85", "label": "functional suitability" }
+      ]
+    },
+    {
+      "title": "Lead Tech Industrial Solutions Corp.",
+      "subtitle": "Inventory System and Website",
+      "context": "Practicum / On-the-Job Training · May 2026",
+      "stack": "HTML, CSS, JavaScript, Vite, Node.js, React, Bootstrap, Firebase Auth / Firestore / Hosting, Cloudinary, face-api.js, Google Gemini",
+      "link": "",
+      "repo": "",
+      "image": "",
+      "bullets": [
+        "Developed 5 core modules and 6 additional pages across 2 integrated systems for inventory tracking and biometric attendance.",
+        "Built inventory tracking with Firestore and Cloudinary-hosted media, the same kind of product, stock, and image data that online store catalogs depend on.",
+        "Implemented face recognition-based attendance logging using face-api.js, hosted on Firebase with full authentication, database, and cloud storage integration.",
+        "Integrated Google Gemini AI for anti-spoofing and liveness detection to strengthen the reliability of the facial recognition module."
+      ],
+      "details": "A single web platform that replaced manual records for inventory, attendance, employee administration, and purchasing. Stock levels and item movements update in real time, attendance is verified by face recognition and QR codes, and role-based access makes sure each user only sees the modules their role allows.",
+      "metrics": [
+        { "value": "5", "label": "core modules" },
+        { "value": "2", "label": "integrated systems" },
+        { "value": "20+", "label": "issues tracked & resolved" }
+      ]
+    }
+  ],
+  "certifications": [
+    { "title": "DATA FUTURE PH 2025", "issuer": "DataAnalyticsPhilippines × EMERSON", "date": "November 2025" },
+    { "title": "Pitch to the World 1.0: Tech Start-up Fundamentals for Future Developers, Engineers, and Innovators", "issuer": "", "date": "June 2025" },
+    { "title": "CCNAv7: Introduction to Networks", "issuer": "Cisco Networking Academy", "date": "March 2024" },
+    { "title": "Introduction to Cybersecurity", "issuer": "Cisco Networking Academy", "date": "February 2024" },
+    { "title": "Python Programming & Figma Design", "issuer": "Google Student Developer Club", "date": "January 2023" }
+  ],
+  "education": [
+    {
+      "school": "Batangas State University — The National Engineering University, JPLPC-Malvar Campus",
+      "degree": "Bachelor of Science in Information Technology, major in Business Analytics",
+      "start": "2022",
+      "end": "2026"
+    }
+  ],
+  "reference": "Available upon request."
+}
