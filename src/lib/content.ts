@@ -31,6 +31,7 @@ export interface Experience {
   link: string
   start: string
   end: string
+  logo: string
   bullets: string[]
 }
 export interface Metric { value: string; label: string }
@@ -38,20 +39,24 @@ export interface Project {
   title: string
   subtitle: string
   context: string
+  client: string
   stack: string
   link: string
   repo: string
   image: string
+  logo: string
   bullets: string[]
   details: string
   metrics: Metric[]
 }
-export interface Certification { title: string; issuer: string; date: string }
-export interface Education { school: string; degree: string; start: string; end: string }
+export interface Certification { title: string; issuer: string; date: string; logo: string }
+export interface Education { school: string; degree: string; start: string; end: string; logo: string }
+export interface Glance { label: string; value: string }
 
 export interface Content {
   profile: Profile
   summary: string
+  glance: Glance[]
   skills: SkillGroup[]
   experience: Experience[]
   projects: Project[]

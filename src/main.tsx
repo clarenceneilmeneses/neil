@@ -12,6 +12,8 @@ function Site() {
     loadContent().then((x) => {
       setC(x)
       document.title = `${x.profile.name} — ${x.profile.title}`
+      // Content renders after fetch, so honour deep links like /#projects once it's on the page.
+      if (location.hash) requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView())
     })
   }, [])
   if (!c) return <div className="splash" aria-busy="true" />

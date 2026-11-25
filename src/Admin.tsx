@@ -9,6 +9,7 @@ import {
   type Project,
 } from './lib/content'
 import { supabase } from './lib/supabase'
+import './admin.css'
 
 type Tab = 'profile' | 'experience' | 'projects' | 'skills' | 'certifications' | 'education'
 const TABS: Tab[] = ['profile', 'experience', 'projects', 'skills', 'certifications', 'education']
@@ -164,9 +165,9 @@ function Login() {
 
 /* ---------- editor ---------- */
 
-const blankExp = (): Experience => ({ role: '', org: '', orgDetail: '', location: '', link: '', start: '', end: '', bullets: [] })
+const blankExp = (): Experience => ({ role: '', org: '', orgDetail: '', location: '', link: '', start: '', end: '', logo: '', bullets: [] })
 const blankProject = (): Project => ({
-  title: '', subtitle: '', context: '', stack: '', link: '', repo: '', image: '', bullets: [], details: '', metrics: [],
+  title: '', subtitle: '', context: '', client: '', logo: '', stack: '', link: '', repo: '', image: '', bullets: [], details: '', metrics: [],
 })
 
 function Editor({ session }: { session: Session }) {
@@ -256,7 +257,6 @@ function Editor({ session }: { session: Session }) {
                 <Text label="Title" value={p.title} onChange={(v) => setProfile({ title: v })} />
               </div>
               <Text label="Tagline" value={p.tagline} onChange={(v) => setProfile({ tagline: v })} />
-              <Text label="Availability line" value={p.availability} onChange={(v) => setProfile({ availability: v })} hint="Leave empty to hide." />
               <div className="grid2">
                 <Text label="Email" value={p.email} onChange={(v) => setProfile({ email: v })} />
                 <Text label="Phone" value={p.phone} onChange={(v) => setProfile({ phone: v })} />
@@ -267,6 +267,22 @@ function Editor({ session }: { session: Session }) {
               <Upload label="Portrait photo" accept="image/*" token={token} value={p.photo} onChange={(v) => setProfile({ photo: v })} />
               <Upload label="Résumé PDF" accept="application/pdf" token={token} value={p.resumeUrl} onChange={(v) => setProfile({ resumeUrl: v })} />
               <Text label="Summary" area value={c.summary} onChange={(v) => set('summary', v)} />
+              <div className="f">
+                <span className="f-label">At a glance</span>
+                <span className="f-hint">Short facts shown in the box under the summary. Two or four work best.</span>
+                <List
+                  items={c.glance ?? []}
+                  onChange={(v) => set('glance', v)}
+                  make={() => ({ label: '', value: '' })}
+                  title={(x) => x.label}
+                  render={(x, s) => (
+                    <div className="grid2">
+                      <Text label="Label" value={x.label} onChange={(v) => s({ label: v })} />
+                      <Text label="Value" value={x.value} onChange={(v) => s({ value: v })} />
+                    </div>
+                  )}
+                />
+              </div>
               <Text label="Reference" value={c.reference} onChange={(v) => set('reference', v)} />
             </>
           )}
@@ -288,6 +304,7 @@ function Editor({ session }: { session: Session }) {
                     <Text label="End" value={x.end} onChange={(v) => s({ end: v })} />
                   </div>
                   <Text label="Link" value={x.link} onChange={(v) => s({ link: v })} />
+                  <Upload label="Company logo" accept="image/*" token={token} value={x.logo} onChange={(v) => s({ logo: v })} />
                   <Text label="Bullets" area hint="One bullet per line." value={lines(x.bullets)} onChange={(v) => s({ bullets: unlines(v) })} />
                 </>
               )}
@@ -311,6 +328,10 @@ function Editor({ session }: { session: Session }) {
                   <div className="grid2">
                     <Text label="Live URL" value={x.link} onChange={(v) => s({ link: v })} />
                     <Text label="Repository URL" value={x.repo} onChange={(v) => s({ repo: v })} />
+                  </div>
+                  <div className="grid2">
+                    <Text label="Client / organisation" value={x.client} onChange={(v) => s({ client: v })} hint="Shown in the logo strip." />
+                    <Upload label="Client logo" accept="image/*" token={token} value={x.logo} onChange={(v) => s({ logo: v })} />
                   </div>
                   <Upload label="Screenshot" accept="image/*" token={token} value={x.image} onChange={(v) => s({ image: v })} />
                   <Text label="Bullets" area hint="One bullet per line." value={lines(x.bullets)} onChange={(v) => s({ bullets: unlines(v) })} />
@@ -353,13 +374,14 @@ function Editor({ session }: { session: Session }) {
             <List
               items={c.certifications}
               onChange={(v) => set('certifications', v)}
-              make={() => ({ title: '', issuer: '', date: '' })}
+              make={() => ({ title: '', issuer: '', date: '', logo: '' })}
               title={(x) => x.title}
               render={(x, s) => (
                 <>
                   <Text label="Title" value={x.title} onChange={(v) => s({ title: v })} />
                   <div className="grid2">
                     <Text label="Issuer" value={x.issuer} onChange={(v) => s({ issuer: v })} />
+                    <Upload label="Issuer logo" accept="image/*" token={token} value={x.logo} onChange={(v) => s({ logo: v })} />
                     <Text label="Date" value={x.date} onChange={(v) => s({ date: v })} />
                   </div>
                 </>
@@ -371,12 +393,13 @@ function Editor({ session }: { session: Session }) {
             <List
               items={c.education}
               onChange={(v) => set('education', v)}
-              make={() => ({ school: '', degree: '', start: '', end: '' })}
+              make={() => ({ school: '', degree: '', start: '', end: '', logo: '' })}
               title={(x) => x.school}
               render={(x, s) => (
                 <>
                   <Text label="School" value={x.school} onChange={(v) => s({ school: v })} />
                   <Text label="Degree" value={x.degree} onChange={(v) => s({ degree: v })} />
+                  <Upload label="School logo" accept="image/*" token={token} value={x.logo} onChange={(v) => s({ logo: v })} />
                   <div className="grid2">
                     <Text label="Start" value={x.start} onChange={(v) => s({ start: v })} />
                     <Text label="End" value={x.end} onChange={(v) => s({ end: v })} />
